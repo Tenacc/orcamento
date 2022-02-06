@@ -29,6 +29,10 @@ function cadastrarDespesa() {
 
     ) 
 
-    console.log(despesa)
+    gravar(despesa)
+}
+
+function gravar(d) {
+    localStorage.setItem('oi', JSON.stringify(d))
 }
 
