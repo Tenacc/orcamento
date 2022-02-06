@@ -68,9 +68,10 @@ function cadastrarDespesa() {
     ) 
     
     if (despesa.validarDados()) {
-        alert('dados válidos')
+        bd.gravar(despesa)
+        $('#sucessoGravacao').modal('show') //comando de jquery
     } else {
-        alert('dados inválidos')
+        $('#erroGravacao').modal('show') //comando de jquery
     }
    // 
 }
