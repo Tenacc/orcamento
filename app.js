@@ -67,8 +67,12 @@ function cadastrarDespesa() {
 
     ) 
     
-   
-   // bd.gravar(despesa)
+    if (despesa.validarDados()) {
+        alert('dados válidos')
+    } else {
+        alert('dados inválidos')
+    }
+   // 
 }
 
 
