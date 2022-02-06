@@ -42,6 +42,31 @@ class Bd {
 
        localStorage.setItem('id', id)
     }
+
+    recuperarTodosRegistros() {
+
+        // array de despesas 
+        let despesas = []
+
+        let id = localStorage.getItem('id')
+
+        //recuperar todas as despesas do local storage
+        for(let i = 1; i <= id; i++) {
+
+            //recuperar a despesa 
+            let despesa = JSON.parse(localStorage.getItem(i))
+            
+
+            // verificar se existem itens excluidos
+            if(despesa === null) {
+                continue
+            }
+
+            despesas.push(despesa)
+
+        }
+        return despesas
+    }
     
 }
 
@@ -73,7 +98,12 @@ function cadastrarDespesa() {
     } else {
         $('#erroGravacao').modal('show') //comando de jquery
     }
-   // 
+   
+}
+
+
+function carregaListaDespesas() {
+    
 }
 
 
