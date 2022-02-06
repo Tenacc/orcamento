@@ -103,6 +103,12 @@ function cadastrarDespesa() {
 
 
 function carregaListaDespesas() {
+
+    let despesas = []
+
+    despesas = bd.recuperarTodosRegistros()
+
+    console.log(despesas)
     
 }
 
