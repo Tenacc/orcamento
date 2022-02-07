@@ -105,6 +105,10 @@ class Bd {
 
         return despesasFiltradas
     }
+
+    remover (id) {
+        localStorage.removeItem(id)
+    }
     
 }
 
@@ -184,7 +188,11 @@ function carregaListaDespesas(despesas = []) {
        btn.innerHTML = '<i class = "fas fa-times">'
        btn.id = `id_despesa_${d.id}`
        btn.onclick = function() {
-            alert(this.id)
+
+            let id = btn.id.replace('id_despesa_', '')
+            bd.remover(id)
+
+            window.location.reload()
        }
        linha.insertCell(4).append(btn)
 
