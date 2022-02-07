@@ -182,8 +182,9 @@ function carregaListaDespesas(despesas = []) {
        let btn = document.createElement('button')
        btn.className = 'btn btn-danger'
        btn.innerHTML = '<i class = "fas fa-times">'
+       btn.id = `id_despesa_${d.id}`
        btn.onclick = function() {
-
+            alert(this.id)
        }
        linha.insertCell(4).append(btn)
 
