@@ -138,13 +138,15 @@ function cadastrarDespesa() {
 }
 
 
-function carregaListaDespesas() {
+function carregaListaDespesas(despesas = []) {
 
-    let despesas = []
-
-    despesas = bd.recuperarTodosRegistros()
-
+    
+    if (despesas.length == 0) {
+        despesas = bd.recuperarTodosRegistros()
+    }
+    
     var listaDespesas = document.getElementById('listaDespesas')
+    listaDespesas.innerHTML = ''
     
 
     // percorrer o array e listar 
@@ -192,7 +194,9 @@ function pesquisarDespesa () {
 
 
 
-    bd.pesquisar(despesa)
+    let despesas = bd.pesquisar(despesa)
+
+    
 
 
 }
